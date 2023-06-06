@@ -5,15 +5,13 @@ Rails.application.routes.draw do
   # root "articles#index"
   devise_for :users
 
-  resources :users, only: [:index] do
-    resources :foods, only: [:index] do
-      resources :recpie_foods, only: [:index]
-    end
-    resources :recipes, only: [:index, :show] do
-      resources :recpie_foods, only: [:index]
-    end
+  resources :users
+  resources :foods, only: [:index]
+  resources :recipes, only: [:index, :show] do
+    resources :recpie_foods, only: [:index]
   end
+  resources :public_recipes, only: [:index, :show]
   
-  root "users#index"
+  root "foods#index"
 
 end
