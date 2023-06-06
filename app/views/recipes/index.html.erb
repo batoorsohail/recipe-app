@@ -1,2 +1,13 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<section class="recipes-section">
+  <% @recipes.each do |recipe| %>
+    <section class="recipe-container">
+      <div>
+        <h2><%= link_to recipe.name, recipe_path(recipe), class: "recipe-title" %></h2>
+        <button><%= link_to "Remove", recipe_path(recipe), data: { turbo_method: ::delete, confirm: "Are you sure?" } %></button>
+      </div>
+      <div>
+        <p><%= recipe.description %></p>
+      </div>
+    </section>
+  <% end %>
+</section>
