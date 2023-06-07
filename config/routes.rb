@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/index'
   get 'recipes/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -8,7 +9,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :foods, only: [:index]
-  resources :recipes, only: [:index, :show, :new, :create, :destroy]
+  resources :recipes, only: [:index, :show, :new, :create, :destroy] do
+  end
   resources :recpie_foods, only: [:index]
   resources :public_recipes, only: [:index, :show]
   
