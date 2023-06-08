@@ -1,0 +1,62 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+  body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: black;
+  height: 70px;
+  margin-top: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  text-align: center;
+  padding-top: 25px;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.food-index-page {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.food-table {
+  padding-top: 70px;
+  width: 40%;
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+  
+}
+
+.th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Adds a bottom border to cells */
+  border-right: 1px solid #ddd; /* Adds a right border to cells */
+}
