@@ -87,10 +87,32 @@ tr:nth-child(odd) {
 .form-div {
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   margin: auto;
+  margin-top: 70px;
+  /* background-color: blue; */
 }
 
+.add-food-form-div {
+  /* display: ; */
+  width: 80%;
+  /* padding: 10px; */
+  /* margin-bottom: 1%; */
+  margin-top: 10px;
+  /* background-color: red; */
+}
+
+.field {
+  width: 50%;
+  margin: auto;
+  /* background-color: yellow; */
+  margin-bottom: 30px;
+}
+
+.add-ingredient-to-db-btn-div {
+ display: flex;
+ justify-content: center;
+}
 .add-ingredient-button-div {
   display: flex;
   justify-content: flex-end;
@@ -119,4 +141,26 @@ tr:nth-child(odd) {
   background: rgb(247, 7, 7);
   color: white;
   border: 0;
+}
+
+
+
+
+.add-food-form {
+  width: 100%;
+  padding: 10px;
+  /* margin-bottom: 1%; */
+  margin-top: 10px;
+  /* background-color: ; */
+}
+
+.add-ingredient-to-db-btn {
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  color: white;
+  background-color: black;
+  font-size: 18px;
+  border: 0;
+  cursor: pointer;
+  transition: 1s;
 }
