@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'recipe_foods/new'
+  get 'recipe_foods/edit'
   get 'users/index'
   get 'recipes/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
