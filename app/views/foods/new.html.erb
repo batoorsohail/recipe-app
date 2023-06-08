@@ -1,37 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles-rac.css">
-  <title>Add Food</title>
-</head>
-<body>
-  <%= render partial: 'shared/navigation' %>
-  <div class='food-index-page'>
-    <h1 style='color: rgb(48, 221, 48);'>Add a new ingredient to your list</h1>
+<%= render partial: 'shared/navigation' %>
+<div class='food-index-page'>
+  <h1 style='color: rgb(48, 221, 48);'>Add a new ingredient to your list</h1>
+</div>
+<div class='form-div'>
+  <div class='add-food-form-div'>
+    <%= form_with model: @food, url: foods_path, method: :post, local: true do |form| %>
+      <div class='field'>
+        <%= form.text_field :name, placeholder: 'Ingredient name', class: 'add-food-form'%>
+      </div>
+      <div class='field'>
+        <%= form.select :measurement_unit, options_for_select(['grams', 'kg', 'ounce', 'millilitres', 'litres']), { prompt: 'Measuring Unit' }, class: 'field', class: 'add-food-form' %>
+      </div>
+      <div class='field'>
+        <%= form.text_field :price, placeholder: 'Price $', class: 'add-food-form'%>
+      </div>
+      <div class='field'>
+        <%= form.number_field :quantity, placeholder: 'Quanity', class: 'add-food-form' %>
+      </div>
+      <div class='add-ingredient-to-db-btn-div'>
+        <%= form.submit 'Add to pantry', class: 'add-ingredient-to-db-btn' %>
+      </div>
+    <% end %>
   </div>
-  <div class='form-div'>
-    <div class='add-food-form-div'>
-      <%= form_with model: @food, url: foods_path, method: :post, local: true do |form| %>
-        <div class='field'>
-          <%= form.text_field :name, placeholder: 'Ingredient name', class: 'add-food-form'%>
-        </div>
-        <div class='field'>
-          <%= form.select :measurement_unit, options_for_select(['grams', 'kg', 'ounce', 'millilitres', 'litres']), { prompt: 'Measuring Unit' }, class: 'field', class: 'add-food-form' %>
-        </div>
-        <div class='field'>
-          <%= form.text_field :price, placeholder: 'Price $', class: 'add-food-form'%>
-        </div>
-        <div class='field'>
-          <%= form.number_field :quantity, placeholder: 'Quanity', class: 'add-food-form' %>
-        </div>
-        <div class='add-ingredient-to-db-btn-div'>
-          <%= form.submit 'Add to pantry', class: 'add-ingredient-to-db-btn' %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</body>
-</html>
+</div>
+
