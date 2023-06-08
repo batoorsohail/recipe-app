@@ -1,6 +1,6 @@
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
-  body {
+body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
@@ -10,9 +10,6 @@ header {
   background-color: black;
   height: 70px;
   margin-top: 0;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
 ul {
@@ -59,4 +56,19 @@ a {
   text-align: left;
   border-bottom: 1px solid #ddd; /* Adds a bottom border to cells */
   border-right: 1px solid #ddd; /* Adds a right border to cells */
+}
+
+
+th {
+  background-color: #f2f2f2; 
+  width: 25%;/* Sets the background color of header cells */
+}
+
+/* CSS styles for alternating rows */
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Sets the background color of even rows */
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff; /* Sets the background color of odd rows */
 }
