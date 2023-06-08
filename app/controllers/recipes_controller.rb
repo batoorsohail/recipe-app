@@ -1,4 +1,7 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: %i[public_recipe index]
+  load_and_authorize_resource
+
   def index
     @user = User.find(current_user.id)
     @recipes = @user.recipes
