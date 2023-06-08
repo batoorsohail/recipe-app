@@ -1,10 +1,10 @@
 <header>
   <nav class="nav-bar">
     <ul>
-      <li><a href="">Food Items</a> </li>
-      <li><a href="">Recipes</a> </li>
-      <li><a href="">Public Recipes</a> </li>
-      <li><a href="">Shopping list</a> </li>
+      <li><%= link_to 'Food Items', foods_path %></li>
+      <li><%= link_to 'Recipes', recipes_path %></li>
+      <li><%= link_to 'Public Recipes', public_recipes_path %></li>
+      <li><%= link_to 'Shopping list' %></li>
       <%= render partial: 'devise/shared/logout' %>
     </ul>
   </nav>
