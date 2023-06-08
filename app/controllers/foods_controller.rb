@@ -1,17 +1,16 @@
 class FoodsController < ApplicationController
-
   def index
     @all_foods = Food.all
   end
 
-  def new 
+  def new
     @food = Food.new
   end
 
   def create
     @food = current_user.foods.create(food_params)
     if @food.save
-      redirect_to foods_path 
+      redirect_to foods_path
     else
       render :new
     end
@@ -22,8 +21,9 @@ class FoodsController < ApplicationController
     @food.destroy
     redirect_to foods_path
   end
-  
-  private 
+
+  private
+
   def food_params
     params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
   end
