@@ -14,7 +14,7 @@
  *= require_self
  */
 
- body {
+body {
   margin-top: 0;
   box-sizing: border-box;
- }
+}

@@ -2,7 +2,7 @@
 
 html {
   margin: 0;
-  padding:0 ;
+  padding: 0;
 }
 
 body {
@@ -61,25 +61,25 @@ table {
   width: 100%;
 }
 
-.th, td {
+.th,
+td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #ddd; 
-  border-right: 1px solid #ddd; 
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 
-
 th {
-  background-color: #f2f2f2; 
+  background-color: #f2f2f2;
   width: 25%;
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9; 
+  background-color: #f9f9f9;
 }
 
 tr:nth-child(odd) {
-  background-color: #ffffff; 
+  background-color: #fff;
 }
 
 .form-div {
@@ -102,8 +102,8 @@ tr:nth-child(odd) {
 }
 
 .add-ingredient-to-db-btn-div {
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .add-ingredient-button-div {
