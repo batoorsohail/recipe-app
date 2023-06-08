@@ -10,9 +10,11 @@
 <body>
   <%= render partial: 'shared/navigation' %>
   <div class='food-index-page'>
-      <h1 style='color: green'>Welcome to Ratatouille</h1>
-      <h3>This is what you currently have in your pantry</h3>
-      <button> <%= link_to 'Add a food Item', new_food_path %> </button>
+    <h1 style='color: rgb(48, 221, 48);'>Welcome to Ratatouille!</h1>
+    <h3>This is what you currently have in your pantry</h3>
+    <div class='add-ingredient-button-div'>
+      <%= button_to 'Add ingredient', new_food_path, class: 'btn', method: :get %>
+    </div>
   </div>
   <div class='food-table'>
     <table>
@@ -25,12 +27,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Apple</td>
-          <td>grams</td>
-          <td>$0.99</td>
-          <td><button>Delete</button></td>
-      </tr>
+        <% @all_foods.each do |food| %>
+          <tr>
+            <td> <%= food.name %></td>
+            <td> <%= food.measurement_unit %></td>
+            <td> <%= food.price %></td>
+            <td><%= button_to 'Delete', food_path(food.id), method: :delete, class: 'ingredient-delete-btn' %></td>
+        </tr>
+        <% end %>
       </tbody>
     </table>
   </div>

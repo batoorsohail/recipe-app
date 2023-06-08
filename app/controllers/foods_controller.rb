@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
+
   def index
-    @foods = Food.all
+    @all_foods = Food.all
   end
 
   def new 
@@ -10,10 +11,16 @@ class FoodsController < ApplicationController
   def create
     @food = current_user.foods.create(food_params)
     if @food.save
-      redirect_to foods_path notice: "Food successfully created."
+      redirect_to foods_path 
     else
-      render :new, notice: 'Comment failed to be created.'
+      render :new
     end
+  end
+
+  def destroy
+    @food = Food.find(params[:id])
+    @food.destroy
+    redirect_to foods_path
   end
   
   private 

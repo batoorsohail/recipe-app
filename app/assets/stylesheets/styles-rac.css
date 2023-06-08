@@ -1,4 +1,8 @@
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+html {
+  margin: 0;
+  padding:0 ;
+}
 
 body {
   margin: 0;
@@ -30,7 +34,6 @@ li {
   text-align: center;
 }
 
-
 a {
   color: white;
   text-decoration: none;
@@ -43,32 +46,77 @@ a {
 }
 
 .food-table {
-  padding-top: 70px;
-  width: 40%;
+  display: flex;
+  justify-content: center;
+  /* padding-top: 70px; */
+  width: 50%;
   font-size: 20px;
   margin: auto;
   text-align: center;
+  max-height: 400px;
+  overflow: auto;
   
+}
+
+table {
+  width: 100%;
+ 
 }
 
 .th, td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #ddd; /* Adds a bottom border to cells */
-  border-right: 1px solid #ddd; /* Adds a right border to cells */
+  border-bottom: 1px solid #ddd; 
+  border-right: 1px solid #ddd; 
 }
 
 
 th {
   background-color: #f2f2f2; 
-  width: 25%;/* Sets the background color of header cells */
+  width: 25%;
 }
 
-/* CSS styles for alternating rows */
 tr:nth-child(even) {
-  background-color: #f9f9f9; /* Sets the background color of even rows */
+  background-color: #f9f9f9; 
 }
 
 tr:nth-child(odd) {
-  background-color: #ffffff; /* Sets the background color of odd rows */
+  background-color: #ffffff; 
+}
+
+.form-div {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+}
+
+.add-ingredient-button-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  width: 85%;
+}
+
+.btn {
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  color: white;
+  background-color: black;
+  font-size: 18px;
+  border: 0;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.btn:hover {
+  color: white;
+  background-color: rgb(48, 221, 48);
+}
+
+.ingredient-delete-btn {
+  padding: 7px;
+  background: rgb(247, 7, 7);
+  color: white;
+  border: 0;
 }

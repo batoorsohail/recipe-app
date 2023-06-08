@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles-rac.css">
-    <title>Add Food</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles-rac.css">
+  <title>Add Food</title>
 </head>
 <body>
   <%= render partial: 'shared/navigation' %>
   <div class='food-index-page'>
-      <h1 style='color: green'>Add a new ingredient to your list</h1>
+    <h1 style='color: green'>Add a new ingredient to your list</h1>
   </div>
-
-    <%= form_with model: @food, url: foods_path, method: :post, local: true do |form| %>
+    <div class='form-div'>
+      <%= form_with model: @food, url: foods_path, method: :post, local: true do |form| %>
         <div class='add-food-form'>
-            <div class='field'>
+          <div class='field'>
             <%= form.text_field :name, placeholder: 'Ingredient name'%>
-            </div>
-            <div class='field'>
-            <%= form.text_field :measurement_unit, placeholder: 'Measuring Unit' %>
-            </div>
-            <div class='field'>
+          </div>
+          <div class='field'>
+            <%= form.select :measurement_unit, options_for_select(['grams', 'kg', 'ounce', 'millilitres', 'litres']), { prompt: 'Measuring Unit' }, class: 'field' %>
+          </div>
+          <div class='field'>
             <%= form.text_field :price, placeholder: 'Price $'%>
-            </div>
-            <div class='field'>
-            <%= form.text_field :quantity, placeholder: 'Quanity' %>
-            </div>
-            <%= form.submit 'Add to foodlist' %>
+          </div>
+          <div class='field'>
+            <%= form.number_field :quantity, placeholder: 'Quanity' %>
+          </div>
+          <%= form.submit 'Add to pantry' %>
         </div>
-    <% end %>
-  
+      <% end %>
+    </div>
 </body>
 </html>
