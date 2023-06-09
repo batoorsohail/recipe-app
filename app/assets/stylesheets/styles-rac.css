@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: black;
+  height: 70px;
+  margin-top: 0;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  text-align: center;
+  padding-top: 25px;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.food-index-page {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.food-table {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+  max-height: 400px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  width: 25%;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.form-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  margin-top: 70px;
+}
+
+.add-food-form-div {
+  width: 80%;
+  margin-top: 10px;
+}
+
+.field {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.add-ingredient-to-db-btn-div {
+  display: flex;
+  justify-content: center;
+}
+
+.add-ingredient-button-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  width: 85%;
+}
+
+.btn {
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  color: white;
+  background-color: black;
+  font-size: 18px;
+  border: 0;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.btn:hover {
+  color: white;
+  background-color: rgb(48, 221, 48);
+}
+
+.ingredient-delete-btn {
+  padding: 7px;
+  background: rgb(247, 7, 7);
+  color: white;
+  border: 0;
+}
+
+.add-food-form {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.add-ingredient-to-db-btn {
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  color: white;
+  background-color: black;
+  font-size: 18px;
+  border: 0;
+  cursor: pointer;
+  transition: 1s;
+}
