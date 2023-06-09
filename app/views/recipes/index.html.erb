@@ -4,7 +4,7 @@
     <section class="recipe-container">
       <div class="recipe-name">
         <h2 class="recipe-title"><%= link_to recipe.name, recipe_path(recipe), class: "recipe-title" %></h2>
-        <button class="recipe-del-btn"><%= link_to 'REMOVE', recipe_path(recipe), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: "recipe-del-btn" %></button>
+        <%= button_to 'Delete', recipe_path(recipe.id), method: :delete, class: 'recipe-del-btn' %>
       </div>
       <div class="recipe-desc">
         <p><%= recipe.description %></p>
@@ -12,8 +12,6 @@
     </section>
   <% end %>
   <div class='add-recipe'>
-    <h2><%= link_to 'Add new Recipe', new_recipe_path, class:'recipe_add_btn' %></h2>
-    <h2> <%= link_to 'Public Recipes', public_recipes_path, class:'recipe_add_btn' %></h2>
-    <h2> <%= link_to 'Home', root_path, class:'recipe_add_btn' %></h2>
+    <button class="add-recipe-btn"><%= link_to 'Add new Recipe', new_recipe_path, class:'add-recipe-btn' %></button>
   </div>
 </section>

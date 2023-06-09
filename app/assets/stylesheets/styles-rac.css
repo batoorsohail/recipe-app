@@ -195,3 +195,11 @@ tr:nth-child(odd) {
   padding: 5px 10px;
   border: none;
 }
+
+.add-recipe-btn {
+  background-color: #001aff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
