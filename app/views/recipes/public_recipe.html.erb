@@ -5,12 +5,12 @@
     <% if recipe.public %>
       <article class='public-recipe-container'>
         <div class='public-recipe-details'>
-            <h3><%= link_to recipe.name, recipe_path(recipe), class:"public-recipe-name" %></h3>
-            <h3>By: <%= recipe.user.name %></h3>
+            <h2 class="recipe-title"><%= link_to recipe.name, recipe_path(recipe), class: "recipe-title" %></h2>
+            <h4 class="recipe-owner-name">By: <%= recipe.user.name %></h4>
         </div>
-        <div class="public-recipe-details">
-            <p>Total Food of item: <%= recipe.recipe_foods.count %></p>
-            <p>Total Price: <%= recipe.recipe_foods.sum { |recipe_food| recipe_food.food.price } %></p>
+        <div class="public-recipe-details2">
+            <p class="public-recipe-text">Total Food of item: <%= recipe.recipe_foods.count %></p>
+            <p class="public-recipe-text">Total Price: <%= recipe.recipe_foods.sum { |recipe_food| recipe_food.food.price } %></p>
         </div>
       </article>
     <% end %>
