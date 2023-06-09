@@ -1,5 +1,5 @@
 <%= render partial: 'shared/navigation' %>
-<section>
+<section >
   <h2 class="recipe-name"><%= @recipe.name %></h2>
   <div>
     <h3>Prepration Time: <%= @recipe.preparation_time %></h3>
@@ -40,7 +40,7 @@
         <td><%= ingredient.food.name %></td>
         <td><%= ingredient.quantity %></td>
         <td><%= ingredient.food.price %></td>
-        <td><%= link_to 'Modify ', edit_recipe_recipe_food_path(@recipe, ingredient), class:'td-btn' %> <%= link_to '   Remove', recipe_recipe_food_path(@recipe, ingredient), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:'td-btn' %></td>
+        <td><%= link_to 'Modify ', edit_recipe_recipe_food_path(@recipe, ingredient), class:'td-btn' %> <%= link_to 'Remove', recipe_recipe_food_path(@recipe, ingredient), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:'td-btn' %></td>
       </tr>
     <% end %>
   </tbody>
