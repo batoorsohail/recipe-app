@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'recipe_foods/new'
-  get 'recipe_foods/edit'
-  get 'users/index'
-  get 'recipes/index'
+
   get '/public_recipes', to: 'recipes#public_recipe'
+
   # get '/recipes/:recipe_id/recipe_foods/:id', to: 'recipe_foods#show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -12,13 +10,15 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users
-  resources :foods, only: [:index, :new, :create, :destroy]
-    
+  resources :foods, only: [:index, :new, :create, :destroy]  
   resources :recipes, only: [:index, :show, :new, :create, :destroy] do
     resources :recipe_foods, only: [:new, :create, :destroy, :edit, :update]
   end
-  resources :public_recipes, only: [:index, :show]
-  
+
+  # resources :shopping_list
+
+  get '/shopping_list', to: 'shopping_list#index', as: 'shopping_list'
+
   root "foods#index"
 
 end
