@@ -1,11 +1,12 @@
+<%= render partial: 'shared/navigation' %>
 <section class="recipes-section">
   <% @recipes.each do |recipe| %>
     <section class="recipe-container">
-      <div>
-        <h2><%= link_to recipe.name, recipe_path(recipe), class: "recipe-title" %></h2>
-        <%= link_to 'REMOVE', recipe_path(recipe), data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
+      <div class="recipe-name">
+        <h2 class="recipe-title"><%= link_to recipe.name, recipe_path(recipe), class: "recipe-title" %></h2>
+        <button class="recipe-del-btn"><%= link_to 'REMOVE', recipe_path(recipe), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: "recipe-del-btn" %></button>
       </div>
-      <div>
+      <div class="recipe-desc">
         <p><%= recipe.description %></p>
       </div>
     </section>
