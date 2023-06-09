@@ -1,27 +1,30 @@
-<section>
+<%= render partial: 'shared/navigation' %>
+<section class="recipe-details-section">
   <h2 class="recipe-name"><%= @recipe.name %></h2>
-  <div>
-    <h3>Prepration Time: <%= @recipe.preparation_time %></h3>
-
-    <%= form_with(model: @recipe, local: true) do |form| %>
-      <div class="form-group">
-        <%= form.label :public %>
-        <div class="toggle-switch">
-          <%= form.check_box :public, class: "toggle-checkbox", id: "public-toggle" %>
-          <label for="public-toggle" class="toggle-label"></label>
+  <div class="recipe-details-info">
+    <div>
+      <h3>Prepration Time: <%= @recipe.preparation_time %></h3>
+      <h3>Cooking Time: <%= @recipe.cooking_time %></h3>
+      <h3>Steps go here...</h3>
+    </div>
+    <div>
+      <%= form_with(model: @recipe, local: true) do |form| %>
+        <div class="form-group">
+          <%= form.label :public %>
+          <div class="toggle-switch">
+            <%= form.check_box :public, class: "toggle-checkbox", id: "public-toggle" %>
+            <label for="public-toggle" class="toggle-label"></label>
+          </div>
         </div>
-      </div>
-    <% end %>
-
-    <h3>Cooking Time: <%= @recipe.cooking_time %></h3>
-    <h3>Steps go here...</h3>
+      <% end %>
+    </div>
   </div>
 
   <section class="buttons-section">
     <%# <button type="submit" class="btn">
     <%=link_to 'Generate Shopping List', recipe_shopping_lists_path(@recipe), class:'btn_recipe' %>
     </button>
-    <button type="submit" class="btn"><%=link_to 'Add Ingredients', new_recipe_recipe_food_path(@recipe), class:'btn_recipe' %></button>
+    <button type="submit" class="btn"><%=link_to 'Add Ingredients', new_recipe_recipe_food_path(@recipe), class:'btn-recipe' %></button>
   </section>
   <hr>
   <table>
@@ -39,7 +42,7 @@
         <td><%= ingredient.food.name %></td>
         <td><%= ingredient.quantity %></td>
         <td><%= ingredient.food.price %></td>
-        <td><%= link_to 'Modify ', edit_recipe_recipe_food_path(@recipe, ingredient), class:'td-btn' %> <%= link_to '   Remove', recipe_recipe_food_path(@recipe, ingredient), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:'td-btn' %></td>
+        <td><%= link_to 'Modify', edit_recipe_recipe_food_path(@recipe, ingredient), class:'td-btn' %> <%= link_to 'Remove', recipe_recipe_food_path(@recipe, ingredient), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:'td-btn' %></td>
       </tr>
     <% end %>
   </tbody>
