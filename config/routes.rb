@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'recipes/index'
   get '/public_recipes', to: 'recipes#public_recipe'
+  # get '/recipes/:recipe_id/recipe_foods/:id', to: 'recipe_foods#show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   resources :foods, only: [:index, :new, :create, :destroy]
     
   resources :recipes, only: [:index, :show, :new, :create, :destroy] do
+    resources :recipe_foods, only: [:new, :create, :destroy, :edit, :update]
   end
   resources :public_recipes, only: [:index, :show]
   
