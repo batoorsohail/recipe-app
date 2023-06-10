@@ -331,6 +331,7 @@ h2 {
   width: 40%;
   margin: auto;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .qty_and_amount p {
