@@ -1,7 +1,7 @@
 <%= render partial: 'shared/navigation' %>
 <section>
   <h2>Shopping List</h2>
-  <div>
+  <div class='qty_and_amount'>
     <p>Amount of food items to buy: <%=  [@foods.length, 0].max %> </p>
     <p>Total value of food needed: <%= number_to_currency(@total_price) %> </p>
   </div>

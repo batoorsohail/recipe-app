@@ -279,17 +279,23 @@ tr:nth-child(odd) {
   height: 100vh;
   display: flex;
   gap: 70px;
-  background-image: url('../images/signup_image.jpg');
+  /* background-image: url('../images/signup_image.jpg'); */
 }
 
+.form_div {
+  margin-top: 50px;
+}
 
-
-form {
+.form {
   width: 90%;
   margin: auto;
   padding: 80px;
   background-color: #f5f5f5;
   border-radius: 10px;
+}
+
+.login {
+  width: 40%;
 }
 
 h2 {
@@ -316,4 +322,17 @@ h2 {
   border-radius: 5px;
   border: none;
   margin-top: 3%;
+  width: 25%;
+  align-self: center;
+}
+
+.qty_and_amount {
+  display: flex;
+  width: 40%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.qty_and_amount p {
+  font-size: 18px;
 }
