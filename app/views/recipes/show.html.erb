@@ -3,9 +3,10 @@
   <h2 class="recipe-name"><%= @recipe.name %></h2>
   <div class="recipe-details-info">
     <div>
-      <h3>Prepration Time: <%= @recipe.preparation_time %></h3>
-      <h3>Cooking Time: <%= @recipe.cooking_time %></h3>
-      <h3>Steps go here...</h3>
+      <h3>Prepration Time: <%= @recipe.preparation_time %> minutes</h3>
+      <h3>Cooking Time: <%= @recipe.cooking_time %> minutes</h3>
+      <h3>Steps:</h3>
+      <p><%= @recipe.description %></p>
     </div>
     <div>
       <%= form_with(model: @recipe, local: true) do |form| %>

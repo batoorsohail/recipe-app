@@ -14,10 +14,25 @@ class ShoppingListController < ApplicationController
     @prices = {}
 
     @ingredients = @foods.each do |ingredient|
-      price_per_ingredient = ingredient.price / ingredient.quantity
-      price = @quantity_delta[ingredient.id] * price_per_ingredient
-      @prices[ingredient.id] = price
+      if ingredient.quantity != 0
+        price_per_ingredient = ingredient.price / ingredient.quantity
+        price = @quantity_delta[ingredient.id] * price_per_ingredient
+        @prices[ingredient.id] = price
+      else
+        price_per_ingredient = ingredient.price
+        price = @quantity_delta[ingredient.id] * price_per_ingredient
+        @prices[ingredient.id] = price
+        # Handle the case when the quantity is zero
+        # @prices[ingredient.id] = 0
+      end
     end
+    
+
+    # @ingredients = @foods.each do |ingredient|
+    #   price_per_ingredient = ingredient.price / ingredient.quantity
+    #   price = @quantity_delta[ingredient.id] * price_per_ingredient
+    #   @prices[ingredient.id] = price
+    # end
 
     @total_price = @prices.values.sum
   end
