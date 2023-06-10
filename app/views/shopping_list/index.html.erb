@@ -15,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @ingredients.each do |ingredient| %>
+      <% @foods.each do |ingredient| %>
         <tr>
           <td> <%= ingredient.name%></td>
           <td> <%= "#{@quantity_delta[ingredient.id]} #{ingredient.measurement_unit}" %></td>

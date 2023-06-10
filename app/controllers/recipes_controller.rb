@@ -3,8 +3,7 @@ class RecipesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @user = User.find(current_user.id)
-    @recipes = @user.recipes
+    @recipes = current_user.recipes
   end
 
   def show

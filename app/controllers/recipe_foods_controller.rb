@@ -4,7 +4,6 @@ class RecipeFoodsController < ApplicationController
 
   def index
     @recipe_foods = RecipeFood.include(:user).where(user_id: current_user.id)
-    # @all_foods = Food.includes(:user).where(user_id: current_user.id)
   end
 
   def show
