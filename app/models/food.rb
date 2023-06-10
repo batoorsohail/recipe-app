@@ -1,5 +1,4 @@
 class Food < ApplicationRecord
-
   belongs_to :user, class_name: 'User', foreign_key: :user_id
 
   def self.with_quantity_deficiency(user:)
@@ -18,9 +17,10 @@ class Food < ApplicationRecord
   end
 
   def self.calculate_prices(quantity_delta)
+    
     prices = {}
 
-    @all_foo = Food.find(quantity_delta.keys).each do |ingredient|
+    Food.find(quantity_delta.keys).each do |ingredient|
       price_per_ingredient = if ingredient.quantity.zero?
                                ingredient.price
                              else
@@ -33,5 +33,4 @@ class Food < ApplicationRecord
 
     prices
   end
-
 end

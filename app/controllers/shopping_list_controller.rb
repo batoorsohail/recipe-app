@@ -1,5 +1,4 @@
 class ShoppingListController < ApplicationController
-
   def index
     @foods = Food.with_quantity_deficiency(user: current_user)
 
