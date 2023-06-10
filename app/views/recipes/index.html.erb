@@ -1,0 +1,17 @@
+<%= render partial: 'shared/navigation' %>
+<section class="recipes-section">
+  <% @recipes.each do |recipe| %>
+    <section class="recipe-container">
+      <div class="recipe-name">
+        <h2 class="recipe-title"><%= link_to recipe.name, recipe_path(recipe), class: "recipe-title" %></h2>
+        <%= button_to 'Delete', recipe_path(recipe.id), method: :delete, class: 'recipe-del-btn' %>
+      </div>
+      <div class="recipe-desc">
+        <p><%= recipe.description %></p>
+      </div>
+    </section>
+  <% end %>
+  <div class='add-recipe'>
+    <%= link_to 'Add new Recipe', new_recipe_path, class:'add-recipe-btn' %>
+  </div>
+</section>

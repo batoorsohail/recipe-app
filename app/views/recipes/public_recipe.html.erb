@@ -1,0 +1,20 @@
+<%= render partial: 'shared/navigation' %>
+<section class="public-recipe-section">
+  <h2>Public Recipes</h2>
+  <% @recipes.each do |recipe| %>
+    <% if recipe.public %>
+      <article class='public-recipe-container'>
+        <div class='public-recipe-details'>
+            <h2 class="recipe-title"><%= link_to recipe.name, recipe_path(recipe), class: "recipe-title" %></h2>
+            <h4 class="recipe-owner-name">By: <%= recipe.user.name %></h4>
+        </div>
+        <div class="public-recipe-details2">
+            <p class="public-recipe-text">Total Food of item: <%= recipe.recipe_foods.count %></p>
+            <p class="public-recipe-text">Total Price: <%= recipe.recipe_foods.sum { |recipe_food| recipe_food.food.price } %></p>
+        </div>
+      </article>
+    <% end %>
+  <% end %>
+  <h4> <%= link_to 'Back', recipes_path, class:'recipe-add-btn' %></h4>
+  <h4> <%= link_to 'Home', root_path, class:'recipe-add-btn' %></h4>
+</section>
