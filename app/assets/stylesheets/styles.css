@@ -343,3 +343,14 @@ h2 {
   width: 60%;
   margin: auto;
 }
+
+.edit_recipe_food {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
+}
+
+.update_food {
+  margin-top: 40px;
+}
