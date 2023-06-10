@@ -1,6 +1,10 @@
 class ShoppingListController < ApplicationController
     def index
-      @foods = Food.includes(:user).where('foods.quantity < (SELECT COALESCE(SUM(recipe_foods.quantity), 0) FROM recipe_foods WHERE recipe_foods.food_id = foods.id)').references(:recipe_foods)
+      @foods = Food.includes(:user)
+      .where('foods.quantity < (SELECT COALESCE(SUM(recipe_foods.quantity), 0) 
+        FROM recipe_foods WHERE recipe_foods.food_id = foods.id)')
+      .where(user_id: current_user.id)
+      .references(:recipe_foods)
       @quantity_delta = Food.includes(:user)
         .joins('LEFT JOIN recipe_foods ON recipe_foods.food_id = foods.id')
         .group('foods.id')
