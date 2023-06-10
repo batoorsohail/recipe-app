@@ -270,12 +270,50 @@ tr:nth-child(odd) {
 }
 
 /* Sign up styles */
-/* .signup_image {
-  width: 70%;
-  height: 100%;
-} */
+.signup_image {
+  width: 40vw;
+  height:100vh;
+}
 
 .sign_up_div {
+  height: 100vh;
   display: flex;
-  background-image: url('signup_image.jpg');
+  gap: 70px;
+  background-image: url('../images/signup_image.jpg');
+}
+
+
+
+form {
+  width: 90%;
+  margin: auto;
+  padding: 80px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 3%;
+}
+
+.submit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 3%;
 }
