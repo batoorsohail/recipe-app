@@ -336,3 +336,8 @@ h2 {
 .qty_and_amount p {
   font-size: 18px;
 }
+
+.recipe_new {
+  width: 60%;
+  margin: auto;
+}

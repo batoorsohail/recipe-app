@@ -2,6 +2,8 @@
 <section class="add-recipe-section">
   <h2>Add new Recipe</h2>
   <%= form_with model: @recipe, url: recipes_path do |form| %>
+
+  <div class='recipe_new'>
     <div class="field">
       <%= form.text_field :name, class: 'add-food-form', placeholder: 'Recipe name'%>
     </div>
@@ -16,13 +18,12 @@
       <%= form.number_field :cooking_time, class: 'add-food-form', placeholder: 'Cooking time (minutes)' %>
     </div>
 
-    <div class="field">
-      <%= form.label :public %>
-      <%= form.check_box :public, class: 'add-food-form' %>
+    <div class="field pu">
+      <p>Public <%= form.check_box :public %></p> 
     </div>
 
-    <div class="actions">
+    <div class="field">
       <%= form.submit class: 'input submit'%>
-    </div>
+  </div>
   <% end %>
 </section>
