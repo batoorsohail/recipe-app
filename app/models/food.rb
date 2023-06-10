@@ -17,7 +17,6 @@ class Food < ApplicationRecord
   end
 
   def self.calculate_prices(quantity_delta)
-    
     prices = {}
 
     Food.find(quantity_delta.keys).each do |ingredient|
