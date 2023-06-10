@@ -10,8 +10,8 @@ RSpec.describe 'public_recipes/index.html.erb', type: :feature do
                                description: 'Classic Italian pizza', public: false)
 
       visit 'users/sign_in'
-      fill_in 'Email', with: 'test@gmail.com'
-      fill_in 'Password', with: 'Test123'
+      fill_in 'user_email', with: 'test@gmail.com'
+      fill_in 'user_password', with: 'Test123'
       click_on 'Log in'
     end
 

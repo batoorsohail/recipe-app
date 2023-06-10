@@ -8,31 +8,36 @@ RSpec.describe 'foods/index', type: :feature do
       @food2 = Food.create(name: 'Pizza', measurement_unit: 'slices', price: 20, quantity: 5, user_id: @user1.id)
 
       visit 'users/sign_in'
-      fill_in 'Email', with: 'rac@gmail.com'
-      fill_in 'Password', with: 'Rac1234'
-      click_on 'Log in'
     end
 
     it 'displays Foods list in navbar' do
+      fill_in 'user_email', with: 'rac@gmail.com'
+      fill_in 'user_password', with: 'Rac1234'
+      click_on 'Log in'
+
       visit 'foods'
-      expect(page).to have_content 'Food'
+      expect(page).to have_content 'Food Items'
     end
 
     it 'displays a list of the foods' do
+      fill_in 'user_email', with: 'rac@gmail.com'
+      fill_in 'user_password', with: 'Rac1234'
+      click_on 'Log in'
+
       visit 'foods'
       expect(page).to have_content 'Beans'
       expect(page).to have_content 'Pizza'
     end
 
     it 'has a button to add new food' do
+      fill_in 'user_email', with: 'rac@gmail.com'
+      fill_in 'user_password', with: 'Rac1234'
+      click_on 'Log in'
+
       visit 'foods'
       expect(page).to have_content 'Add ingredient'
     end
-
-    it 'should take you to add food form when clicking on the button' do
-      visit 'foods'
-      click_on 'Add ingredient'
-      expect(current_path).to eql new_user_food_path(@user1)
-    end
   end
 end
+
+

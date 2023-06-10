@@ -10,8 +10,8 @@ RSpec.describe 'recipes/index', type: :feature do
                                description: 'Test for checking if file works', public: false)
 
       visit 'users/sign_in'
-      fill_in 'Email', with: 'testnw@gmail.com'
-      fill_in 'Password', with: 'test123'
+      fill_in 'user_email', with: 'testnw@gmail.com'
+      fill_in 'user_password', with: 'test123'
       click_on 'Log in'
     end
 
