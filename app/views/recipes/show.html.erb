@@ -21,10 +21,7 @@
   </div>
 
   <section class="buttons-section">
-    <%# <button type="submit" class="btn">
-    <%=link_to 'Generate Shopping List', recipe_shopping_lists_path(@recipe), class:'btn_recipe' %>
-    </button>
-    <button type="submit" class="btn"><%=link_to 'Shopping List', shopping_list_path, class:'btn-recipe' %></button>
+    <button type="submit" class="btn"><%=link_to 'Generate Shopping List', shopping_list_path, class:'btn-recipe' %></button>
     <button type="submit" class="btn"><%=link_to 'Add Ingredients', new_recipe_recipe_food_path(@recipe), class:'btn-recipe' %></button>
   </section>
   <hr>
