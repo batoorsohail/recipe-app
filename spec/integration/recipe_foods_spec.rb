@@ -4,8 +4,10 @@ RSpec.describe 'recipes/index', type: :feature do
   describe 'after log in' do
     before(:each) do
       @user = User.create(name: 'Test', email: 'testnw@gmail.com', password: 'test123', confirmed_at: Time.now)
-      @recipe1 = Recipe.create(user_id: @user.id, name: 'Burger', preparation_time: 20, cooking_time: 50, description: 'Home style american burger', public: true)
-      @recipe2 = Recipe.create(user_id: @user.id, name: 'Pizza', preparation_time: 10, cooking_time: 30, description: 'Test for checking if file works', public: false)
+      @recipe1 = Recipe.create(user_id: @user.id, name: 'Burger', preparation_time: 20, cooking_time: 50,
+                               description: 'Home style american burger', public: true)
+      @recipe2 = Recipe.create(user_id: @user.id, name: 'Pizza', preparation_time: 10, cooking_time: 30,
+                               description: 'Test for checking if file works', public: false)
 
       visit 'users/sign_in'
       fill_in 'Email', with: 'testnw@gmail.com'
