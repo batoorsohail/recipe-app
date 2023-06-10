@@ -272,13 +272,14 @@ tr:nth-child(odd) {
 /* Sign up styles */
 .signup_image {
   width: 40vw;
-  height:100vh;
+  height: 100vh;
 }
 
 .sign_up_div {
   height: 100vh;
   display: flex;
   gap: 70px;
+
   /* background-image: url('../images/signup_image.jpg'); */
 }
 
@@ -303,9 +304,9 @@ h2 {
   margin-bottom: 20px;
 }
 
-.field {
+/* .field {
   margin-bottom: 20px;
-}
+} */
 
 .input {
   width: 100%;
@@ -316,7 +317,7 @@ h2 {
 }
 
 .submit {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px;
   border-radius: 5px;
