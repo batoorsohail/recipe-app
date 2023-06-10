@@ -5,6 +5,7 @@ class ShoppingListController < ApplicationController
         FROM recipe_foods WHERE recipe_foods.food_id = foods.id)')
       .where(user_id: current_user.id)
       .references(:recipe_foods)
+      
       @quantity_delta = Food.includes(:user)
         .joins('LEFT JOIN recipe_foods ON recipe_foods.food_id = foods.id')
         .group('foods.id')
