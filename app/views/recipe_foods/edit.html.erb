@@ -1,3 +1,4 @@
+<%= render partial: 'shared/navigation' %>
 <section class="edit-recipe-section">
   <h2>Edit Recipe Food</h2>
   <%= form_with model: @recipe_food, url: recipe_recipe_food_path(@recipe_food.recipe, @recipe_food), method: :patch do |form| %>

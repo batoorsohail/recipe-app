@@ -2,31 +2,28 @@
 <section class="add-recipe-section">
   <h2>Add new Recipe</h2>
   <%= form_with model: @recipe, url: recipes_path do |form| %>
+
+  <div class='recipe_new'>
     <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+      <%= form.text_field :name, class: 'add-food-form', placeholder: 'Recipe name'%>
     </div>
     <div class="field">
-      <%= form.label :description %>
-      <%= form.text_area :description %>
+      <%= form.text_area :description, class: 'add-food-form', placeholder: 'Description'%>
     </div>
     <div class="field">
-      <%= form.label :preparation_time %>
-      <%= form.text_field :preparation_time %>
+      <%= form.number_field :preparation_time, class: 'add-food-form', placeholder: 'Preparation name (minutes)' %>
     </div>
 
     <div class="field">
-      <%= form.label :cooking_time %>
-      <%= form.text_field :cooking_time %>
+      <%= form.number_field :cooking_time, class: 'add-food-form', placeholder: 'Cooking time (minutes)' %>
+    </div>
+
+    <div class="field pu">
+      <p>Public <%= form.check_box :public %></p> 
     </div>
 
     <div class="field">
-      <%= form.label :public %>
-      <%= form.check_box :public %>
-    </div>
-
-    <div class="actions">
-      <%= form.submit %>
-    </div>
+      <%= form.submit class: 'input submit'%>
+  </div>
   <% end %>
 </section>
