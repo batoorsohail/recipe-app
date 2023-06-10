@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe RecipeFood, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
-
-  subject(:user) { User.new(name: 'User Name', email: 'dem@gmail.com') }
+  subject(:user) { User.new(name: 'Test', email: 'test@gmail.com') }
 
   let!(:recipe) do
-    Recipe.create(name: 'Recipe Name', description: 'Description', public: true, preparation_time: 10,
+    Recipe.create(name: 'Recipe', description: 'Recipe Test', public: true, preparation_time: 10,
                   cooking_time: 10, user_id: user.id)
   end
 
@@ -47,11 +45,11 @@ RSpec.describe RecipeFood, type: :model do
 
   describe 'View' do
     it 'should have a description' do
-      expect(recipe.description).to eq('Description')
+      expect(recipe.description).to eq('Recipe Test')
     end
 
     it 'should have a name' do
-      expect(recipe.name).to eq('Recipe Name')
+      expect(recipe.name).to eq('Recipe')
     end
 
     it 'should have a recipe_id' do
