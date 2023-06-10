@@ -39,5 +39,3 @@ RSpec.describe 'foods/index', type: :feature do
     end
   end
 end
-
-
