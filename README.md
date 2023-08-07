@@ -20,7 +20,7 @@
 
 # 📖 Recipe App <a name="about-project"></a>
 
-**Recipe App** is a rails application that keeps track of all your recipes and ingredients create recipes and generate a shopping list based on what you have and what they are missing on a recipe. You can also make your favourite recipes public
+**Recipe App** is a rails application that keeps track of all your recipes and ingredients creates recipes and generates a shopping list based on what you have and what they are missing on a recipe. You can also make your favorite recipes public.
 
 ## 🛠 Built With <a name="built-with"></a>
 
