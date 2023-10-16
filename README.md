@@ -51,7 +51,7 @@ In order to run this project you need:
 - Ruby
 - Rails
 
-### SetUp
+### Setup
 
 Clone this Repository to your desired folder:
 
@@ -61,20 +61,30 @@ cd my-folder
 git clone https://github.com/batoorsohail/recipe-app.git
 
 ```
-### Install 
-Install dependencies for this project with:
+To install dependencies, run:
  
 ``` sh
 bundle install
+```
+To set up the database, run:
 
+``` sh
+rails db:create
+```
+``` sh
+rails db:migrate
 ```
 
 ### Usage
 To run the server, execute the following command:
 ``` sh
-
 rails s
+```
 
+### Run Tests
+To run tests, run the following commands:
+``` sh
+rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
